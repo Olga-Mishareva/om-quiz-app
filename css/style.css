@@ -1,1 +1,43 @@
 @import url("../fonts/fonts.css");
+
+.page {
+  font-family: "Inter", sans-serif;
+  box-sizing: border-box;
+  min-width: 320px;
+  max-width: 1440px;
+  color: #0b0c10;
+  margin: 0 auto;
+}
+
+.page__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ------------------------------ */
+
+.header {
+  background-color: #e85a4f;
+  min-height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: #e85a4f 0 5px;
+}
+
+.header__title {
+  margin: 0;
+  color: #eae7dc;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 36px;
+}
+
+.content {
+  background-color: #eae7dc;
+}
+
+.footer {
+  background-color: #e85a4f;
+}
