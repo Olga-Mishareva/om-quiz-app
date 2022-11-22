@@ -176,7 +176,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  border-top: var(--hd-color) 3px solid;
+  border-top: var(--hd-color) 2px solid;
 }
 
 .navbar__link {
@@ -197,4 +197,17 @@
 
 .navbar__link_active {
   background-color: var(--hd-color);
+}
+
+.navbar__bookmark {
+  fill: var(--main-bg-color);
+}
+
+/* .navbar__link:hover .navbar__bookmark {
+  fill: var(--hd-color);
+} */
+
+.navbar__link_type_marked:hover {
+  background-color: var(--hd-color);
+  opacity: 1;
 }
