@@ -1,0 +1,48 @@
+.navbar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  min-height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-top: var(--hd-color) 2px solid;
+}
+
+.navbar__link {
+  width: calc(100% / 3);
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--hd-color);
+  background-color: var(--main-bg-color);
+}
+
+.navbar__link:hover {
+  background-color: var(--gray-bg-color);
+  box-shadow: rgba(0, 0, 0, 0.4) 0 -1px 8px;
+  transition: background-color 0.2s linear;
+}
+
+.navbar__link--active {
+  background-color: var(--hd-color);
+}
+
+.navbar__icon {
+  fill: var(--hd-color);
+}
+
+.navbar__icon--active {
+  fill: var(--main-bg-color);
+}
+
+/* .navbar__link:hover .navbar__bookmark {
+  fill: var(--hd-color);
+} */
+
+.navbar__link--active.navbar__link--marked:hover,
+.navbar__link--active.navbar__link--home:hover,
+.navbar__link--active.navbar__link--profile:hover {
+  background-color: var(--hd-color);
+}
