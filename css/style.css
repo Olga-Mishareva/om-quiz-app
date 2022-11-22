@@ -85,8 +85,25 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  width: 30px;
-  height: 32px;
+  width: 28px;
+  height: 31px;
+}
+
+.card__bookmark:hover {
+  cursor: pointer;
+  fill: var(--gray-bg-color);
+  transition: fill 0.2s linear;
+}
+
+.card__bookmark_active {
+  fill: var(--hd-color);
+}
+
+.card__bookmark_active:hover {
+  cursor: pointer;
+  fill: var(--hd-color);
+  opacity: 0.85;
+  transition: opacity 0.2s linear;
 }
 
 .card__question {
@@ -147,18 +164,37 @@
 }
 
 .footer {
-  background-color: var(--hd-color);
+  display: flex;
+  align-items: center;
+  background-color: var(--main-bg-color);
   min-height: 60px;
 }
 
 .navbar {
+  width: 100%;
+  min-height: 60px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  align-items: center;
+  border-top: var(--hd-color) 3px solid;
 }
 
 .navbar__link {
+  width: calc(100% / 3);
   text-decoration: none;
-  color: var(--gray-bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--hd-color);
+}
+
+.navbar__link:hover {
+  background-color: var(--gray-bg-color);
+  opacity: 0.85;
+  box-shadow: rgba(0, 0, 0, 0.4) 0 -1px 8px;
+  transition: opacity 0.2s linear, background-color 0.2s linear;
+}
+
+.navbar__link_active {
+  background-color: var(--hd-color);
 }
