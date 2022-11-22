@@ -18,7 +18,7 @@
         <ul class="card-box page__list">
           <li class="card">
             <svg
-              class="card__bookmark card__bookmark_active"
+              class="card__bookmark card__bookmark--active"
               xmlns="http://www.w3.org/2000/svg"
               width="30"
               height="30"
@@ -34,7 +34,7 @@
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr?
             </p>
             <button class="card__btn" type="button">Show Answer</button>
-            <p class="card__answer card__answer_visible">Lorem ipsum dolor</p>
+            <p class="card__answer card__answer--visible">Lorem ipsum dolor</p>
             <ul class="card__categories page__list">
               <li class="card__tag">#html</li>
               <li class="card__tag">#css</li>
@@ -59,7 +59,7 @@
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam?
             </p>
             <button class="card__btn" type="button">Show Answer</button>
-            <p class="card__answer card__answer_visible">Lorem ipsum dolor</p>
+            <p class="card__answer card__answer--visible">Lorem ipsum dolor</p>
             <ul class="card__categories page__list">
               <li class="card__tag">#html</li>
               <li class="card__tag">#css</li>
@@ -84,7 +84,7 @@
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam?
             </p>
             <button class="card__btn" type="button">Show Answer</button>
-            <p class="card__answer card__answer_visible">Lorem ipsum dolor</p>
+            <p class="card__answer card__answer--visible">Lorem ipsum dolor</p>
             <ul class="card__categories page__list">
               <li class="card__tag">#html</li>
               <li class="card__tag">#css</li>
@@ -96,8 +96,12 @@
     </main>
     <footer class="footer">
       <nav class="navbar">
-        <a class="navbar__link navbar__link_type_home" href="#">
+        <a
+          class="navbar__link navbar__link--home navbar__link--active"
+          href="#"
+        >
           <svg
+            class="navbar__home"
             xmlns="http://www.w3.org/2000/svg"
             width="35"
             height="35"
@@ -110,7 +114,7 @@
             />
           </svg>
         </a>
-        <a class="navbar__link navbar__link_type_marked" href="#">
+        <a class="navbar__link navbar__link--marked" href="#">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="32"
@@ -125,7 +129,7 @@
             />
           </svg>
         </a>
-        <a class="navbar__link navbar__link_type_profile" href="#">
+        <a class="navbar__link navbar__link--profile" href="#">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="40"

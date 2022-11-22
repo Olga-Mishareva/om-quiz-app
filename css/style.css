@@ -1,15 +1,5 @@
 @import url("../fonts/fonts.css");
-
-:root {
-  /* --main-bg-color: #cacaca; */
-  --main-bg-color: #edf5e1;
-  --hd-color: #05386b;
-  --card-font-color: #000000;
-  --btn-color: #2c7868;
-  --tag-color: #5d001e;
-  --card-bg-color: #8ee4af;
-  --gray-bg-color: #d6d6d6;
-}
+@import url("../css/global.css");
 
 .page {
   font-family: "Inter", sans-serif;
@@ -95,11 +85,11 @@
   transition: fill 0.2s linear;
 }
 
-.card__bookmark_active {
+.card__bookmark--active {
   fill: var(--hd-color);
 }
 
-.card__bookmark_active:hover {
+.card__bookmark--active:hover {
   cursor: pointer;
   fill: var(--hd-color);
   opacity: 0.85;
@@ -122,7 +112,7 @@
   box-shadow: rgba(94, 94, 94, 0.3) 3px 3px 5px;
   width: 140px;
   height: 40px;
-  color: var(--gray-bg-color);
+  color: var(--main-bg-color);
   font-size: 16px;
 }
 
@@ -135,7 +125,7 @@
   display: none;
 }
 
-/* .card__answer_visible {
+/* .card__answer--visible {
   display: block;
   margin: 0;
   text-align: center;
@@ -171,6 +161,8 @@
 }
 
 .navbar {
+  position: fixed;
+  bottom: 0;
   width: 100%;
   min-height: 60px;
   display: flex;
@@ -186,20 +178,22 @@
   justify-content: center;
   align-items: center;
   color: var(--hd-color);
+  background-color: var(--main-bg-color);
 }
 
 .navbar__link:hover {
   background-color: var(--gray-bg-color);
-  opacity: 0.85;
   box-shadow: rgba(0, 0, 0, 0.4) 0 -1px 8px;
-  transition: opacity 0.2s linear, background-color 0.2s linear;
+  transition: background-color 0.2s linear;
 }
 
-.navbar__link_active {
+.navbar__link--active {
   background-color: var(--hd-color);
 }
 
-.navbar__bookmark {
+.navbar__bookmark,
+.navbar__home,
+.navbar__profile {
   fill: var(--main-bg-color);
 }
 
@@ -207,7 +201,8 @@
   fill: var(--hd-color);
 } */
 
-.navbar__link_type_marked:hover {
+.navbar__link--active.navbar__link--marked:hover,
+.navbar__link--active.navbar__link--home:hover,
+.navbar__link--active.navbar__link--profile:hover {
   background-color: var(--hd-color);
-  opacity: 1;
 }
