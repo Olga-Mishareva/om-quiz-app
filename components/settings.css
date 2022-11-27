@@ -33,6 +33,7 @@
 
 .settings__checkbox + .settings__lable {
   height: 18px;
+  cursor: pointer;
 }
 
 .settings__checkbox + .settings__lable::before {
