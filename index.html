@@ -10,12 +10,12 @@
   <body class="page">
     <header class="header">
       <div class="header__container">
-        <h1 class="header__title">Quiz App</h1>
+        <h1 class="header__title">quizApp</h1>
       </div>
     </header>
     <main class="content">
       <section class="card-box">
-        <ul class="card-box page__list">
+        <ul class="card-box__list page__list">
           <li class="card">
             <svg
               class="card__bookmark card__bookmark--active"
@@ -96,32 +96,30 @@
     </main>
     <footer class="footer">
       <nav class="navbar">
-        <a
-          class="navbar__link navbar__link--home navbar__link--active"
-          href="#"
+        <button
+          class="navbar__btn navbar__btn--home navbar__btn--active"
+          type="button"
         >
           <svg
-            class="navbar__icon navbar__icon--active"
+            class="bi bi-house-door-fill navbar__icon navbar__icon--active"
             xmlns="http://www.w3.org/2000/svg"
             width="35"
             height="35"
             fill="currentColor"
-            class="bi bi-house-door-fill"
             viewBox="0 0 16 16"
           >
             <path
               d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5Z"
             />
           </svg>
-        </a>
-        <a class="navbar__link navbar__link--marked" href="#">
+        </button>
+        <button class="navbar__btn navbar__btn--marked" type="button">
           <svg
-            class="navbar__icon"
+            class="bi bi-bookmark-star-fill navbar__icon"
             xmlns="http://www.w3.org/2000/svg"
             width="32"
             height="32"
             fill="currentColor"
-            class="bi bi-bookmark-star-fill"
             viewBox="0 0 16 16"
           >
             <path
@@ -129,22 +127,21 @@
               d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zM8.16 4.1a.178.178 0 0 0-.32 0l-.634 1.285a.178.178 0 0 1-.134.098l-1.42.206a.178.178 0 0 0-.098.303L6.58 6.993c.042.041.061.1.051.158L6.39 8.565a.178.178 0 0 0 .258.187l1.27-.668a.178.178 0 0 1 .165 0l1.27.668a.178.178 0 0 0 .257-.187L9.368 7.15a.178.178 0 0 1 .05-.158l1.028-1.001a.178.178 0 0 0-.098-.303l-1.42-.206a.178.178 0 0 1-.134-.098L8.16 4.1z"
             />
           </svg>
-        </a>
-        <a class="navbar__link navbar__link--profile" href="#">
+        </button>
+        <button class="navbar__btn navbar__btn--profile" type="button">
           <svg
-            class="navbar__icon"
+            class="bi bi-person-fill navbar__icon"
             xmlns="http://www.w3.org/2000/svg"
             width="40"
             height="40"
             fill="currentColor"
-            class="bi bi-person-fill"
             viewBox="0 0 16 16"
           >
             <path
               d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
             />
           </svg>
-        </a>
+        </button>
       </nav>
     </footer>
   </body>
