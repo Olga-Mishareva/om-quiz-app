@@ -1,6 +1,5 @@
 .card {
   position: relative;
-  width: 240px;
   padding: 20px;
   background-color: var(--card-bg-color);
   box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.3);
@@ -54,16 +53,18 @@
   background-color: var(--btn-color);
   border: none;
   border-radius: 10px;
-  box-shadow: rgba(94, 94, 94, 0.3) 3px 3px 5px;
+  box-shadow: rgba(0, 0, 0, 0.3) 3px 3px 8px;
   width: 140px;
   height: 40px;
   color: var(--main-bg-color);
   font-size: 16px;
+  transition: box-shadow 0.2s linear, opacity 0.2s linear;
 }
 
 .card__btn:hover {
   cursor: pointer;
-  opacity: 0.8;
+  opacity: 0.9;
+  box-shadow: none;
 }
 
 .card__answer {
@@ -96,4 +97,11 @@
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.2) 1px 2px 5px;
   font-size: 12px;
+  cursor: pointer;
+  transition: box-shadow 0.2s linear;
+}
+
+.card__tag:hover {
+  cursor: pointer;
+  box-shadow: none;
 }
