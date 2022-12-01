@@ -12,31 +12,33 @@
 
 .card__bookmark {
   position: absolute;
-  top: -5px;
+  top: -2px;
   right: 15px;
-  fill: var(--main-bg-color);
+  border: none;
   background-image: url(../images/bookmark.svg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  width: 28px;
-  height: 31px;
+  width: 30px;
+  height: 32px;
+  background-color: transparent;
+  opacity: 0.65;
 }
 
 .card__bookmark:hover {
   cursor: pointer;
-  fill: var(--gray-bg-color);
-  transition: fill 0.2s linear;
+  opacity: 1;
+  transition: opacity 0.2s linear;
 }
 
 .card__bookmark--active {
-  fill: var(--hd-color);
+  background-image: url(../images/bookmark-star-fill.svg);
+  opacity: 0.8;
 }
 
 .card__bookmark--active:hover {
   cursor: pointer;
-  fill: var(--hd-color);
-  opacity: 0.85;
+  opacity: 0.6;
   transition: opacity 0.2s linear;
 }
 

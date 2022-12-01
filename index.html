@@ -17,23 +17,13 @@
       <section class="card-box">
         <ul class="card-box__list page__list">
           <li class="card">
-            <svg
-              class="card__bookmark card__bookmark--active"
-              xmlns="http://www.w3.org/2000/svg"
-              width="30"
-              height="30"
-              fill="currentColor"
-              class="bi bi-bookmark-fill"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"
-              />
-            </svg>
+            <button class="card__bookmark"></button>
             <p class="card__question">
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr?
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam?
             </p>
-            <button class="card__btn" type="button">Show Answer</button>
+            <button class="card__btn" type="button" data-js="answer-btn">
+              Show Answer
+            </button>
             <p class="card__answer card__answer--visible">Lorem ipsum dolor</p>
             <ul class="card__categories page__list">
               <li class="card__tag">#html</li>
@@ -42,23 +32,13 @@
             </ul>
           </li>
           <li class="card">
-            <svg
-              class="card__bookmark"
-              xmlns="http://www.w3.org/2000/svg"
-              width="30"
-              height="30"
-              fill="currentColor"
-              class="bi bi-bookmark-fill"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"
-              />
-            </svg>
+            <button class="card__bookmark"></button>
             <p class="card__question">
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam?
             </p>
-            <button class="card__btn" type="button">Show Answer</button>
+            <button class="card__btn" type="button" data-js="answer-btn">
+              Show Answer
+            </button>
             <p class="card__answer card__answer--visible">Lorem ipsum dolor</p>
             <ul class="card__categories page__list">
               <li class="card__tag">#html</li>
@@ -67,23 +47,13 @@
             </ul>
           </li>
           <li class="card">
-            <svg
-              class="card__bookmark"
-              xmlns="http://www.w3.org/2000/svg"
-              width="30"
-              height="30"
-              fill="currentColor"
-              class="bi bi-bookmark-fill"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"
-              />
-            </svg>
+            <button class="card__bookmark"></button>
             <p class="card__question">
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam?
             </p>
-            <button class="card__btn" type="button">Show Answer</button>
+            <button class="card__btn" type="button" data-js="answer-btn">
+              Show Answer
+            </button>
             <p class="card__answer card__answer--visible">Lorem ipsum dolor</p>
             <ul class="card__categories page__list">
               <li class="card__tag">#html</li>
@@ -94,11 +64,31 @@
         </ul>
       </section>
     </main>
+
+    <template>
+      <li class="card">
+        <button class="card__bookmark"></button>
+        <p class="card__question">
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam?
+        </p>
+        <button class="card__btn" type="button" data-js="answer-btn">
+          Show Answer
+        </button>
+        <p class="card__answer card__answer--visible">Lorem ipsum dolor</p>
+        <ul class="card__categories page__list">
+          <li class="card__tag">#html</li>
+          <li class="card__tag">#css</li>
+          <li class="card__tag">#flexbox</li>
+        </ul>
+      </li>
+    </template>
+
     <footer class="footer">
       <nav class="navbar">
-        <button
+        <a
           class="navbar__btn navbar__btn--home navbar__btn--active"
-          type="button"
+          href="./index.html"
+          data-js="home-btn"
         >
           <svg
             class="bi bi-house-door-fill navbar__icon navbar__icon--active"
@@ -112,8 +102,12 @@
               d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5Z"
             />
           </svg>
-        </button>
-        <button class="navbar__btn navbar__btn--marked" type="button">
+        </a>
+        <a
+          class="navbar__btn navbar__btn--marked"
+          href="./pages/bookmarks.html"
+          data-js="marked-btn"
+        >
           <svg
             class="bi bi-bookmark-star-fill navbar__icon"
             xmlns="http://www.w3.org/2000/svg"
@@ -127,8 +121,12 @@
               d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zM8.16 4.1a.178.178 0 0 0-.32 0l-.634 1.285a.178.178 0 0 1-.134.098l-1.42.206a.178.178 0 0 0-.098.303L6.58 6.993c.042.041.061.1.051.158L6.39 8.565a.178.178 0 0 0 .258.187l1.27-.668a.178.178 0 0 1 .165 0l1.27.668a.178.178 0 0 0 .257-.187L9.368 7.15a.178.178 0 0 1 .05-.158l1.028-1.001a.178.178 0 0 0-.098-.303l-1.42-.206a.178.178 0 0 1-.134-.098L8.16 4.1z"
             />
           </svg>
-        </button>
-        <button class="navbar__btn navbar__btn--profile" type="button">
+        </a>
+        <a
+          class="navbar__btn navbar__btn--profile"
+          href="./pages/profile.html"
+          data-js="profile-btn"
+        >
           <svg
             class="bi bi-person-fill navbar__icon"
             xmlns="http://www.w3.org/2000/svg"
@@ -141,7 +139,7 @@
               d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
             />
           </svg>
-        </button>
+        </a>
       </nav>
     </footer>
   </body>
