@@ -24,33 +24,62 @@ const from = document.querySelector('[data-js="form"]');
 const cardBox = document.querySelector('[data-js="cardbox"]');
 let cardCounter = 0;
 
+function getTemplate() {
+  const template = document.querySelector('[data-js="template"]');
+  const cardElement = template.content.cloneNode(true);
+
+  return cardElement;
+}
+
+function createCard() {
+  const newCard = getTemplate();
+  handleAnswerButton(newCard);
+  cardBox.append(newCard);
+}
+
+function handleAnswerButton(card) {
+  const answerButton = card.querySelector('[data-js="answer-btn"]');
+  const answer = card.querySelector('[data-js="answer"]');
+  answerButton.addEventListener("click", () => {
+    answer.classList.toggle("card__answer--visible");
+    if (answer.classList.contains("card__answer--visible")) {
+      answerButton.textContent = "Hide answer";
+    } else {
+      answerButton.textContent = "Show answer";
+    }
+  });
+}
+
+function handleQuestion(question) {
+  const questionList = Array.from(
+    document.querySelectorAll('[data-js="question"]')
+  );
+  const cardQuestion = questionList.find((item, i) => i == cardCounter);
+  cardQuestion.textContent = question;
+}
+
+function handleAnswer(answer) {
+  const answerList = Array.from(
+    document.querySelectorAll('[data-js="answer"]')
+  );
+  const cardAnswer = answerList.find((item, i) => i == cardCounter);
+  cardAnswer.textContent = answer;
+}
+
+// function handleTags(tags) {}
+
 from.addEventListener("submit", (event) => {
   event.preventDefault();
   const { question, answer, tags } = Object.fromEntries(
     new FormData(event.target)
   );
 
-  console.log(question, answer, tags);
+  createCard();
+  handleQuestion(question);
+  handleAnswer(answer);
+  // handleTags(tags)
 
-  const template = document.querySelector('[data-js="template"]');
-  const newCard = template.content.cloneNode(true);
-  cardBox.append(newCard);
-
-  const questionList = Array.from(
-    document.querySelectorAll('[data-js="question"]')
-  );
-  const cardQuestion = questionList.find((item, i) => i == cardCounter);
-  cardQuestion.textContent = question;
-
-  console.log(cardQuestion);
-
-  const answerList = Array.from(
-    document.querySelectorAll('[data-js="answer"]')
-  );
-  const cardAnswer = answerList.find((item, i) => i == cardCounter);
-  console.log(answerList);
-
-  cardAnswer.textContent = answer;
   cardCounter++;
   from.reset();
+  event.target.elements.question.focus();
 });
