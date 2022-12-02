@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../style.css" />
     <script src="../index.js" defer></script>
-    <title>My Bookmarks</title>
+    <title>Form</title>
   </head>
   <body class="page">
     <header class="header">
@@ -15,75 +15,40 @@
       </div>
     </header>
     <main class="content">
-      <section class="card-box">
-        <ul class="card-box__list page__list">
-          <li class="card" data-js="card">
-            <button
-              class="card__bookmark card__bookmark--active"
-              type="button"
-              data-js="bookmark-btn"
-            ></button>
-            <p class="card__question">
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam?
-            </p>
-            <button class="card__btn" type="button" data-js="answer-btn">
-              Show Answer
-            </button>
-            <p class="card__answer card__answer--visible" data-js="answer">
-              Lorem ipsum dolor
-            </p>
-            <ul class="card__categories page__list">
-              <li class="card__tag">#html</li>
-              <li class="card__tag">#css</li>
-              <li class="card__tag">#flexbox</li>
-            </ul>
-          </li>
-          <li class="card" data-js="card">
-            <button
-              class="card__bookmark card__bookmark--active"
-              type="button"
-              data-js="bookmark-btn"
-            ></button>
-            <p class="card__question">
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam?
-            </p>
-            <button class="card__btn" type="button" data-js="answer-btn">
-              Show Answer
-            </button>
-            <p class="card__answer card__answer--visible" data-js="answer">
-              Lorem ipsum dolor
-            </p>
-            <ul class="card__categories page__list">
-              <li class="card__tag">#html</li>
-              <li class="card__tag">#css</li>
-              <li class="card__tag">#flexbox</li>
-            </ul>
-          </li>
-          <li class="card" data-js="card">
-            <button
-              class="card__bookmark card__bookmark--active"
-              type="button"
-              data-js="bookmark-btn"
-            ></button>
-            <p class="card__question">
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam?
-            </p>
-            <button class="card__btn" type="button" data-js="answer-btn">
-              Show Answer
-            </button>
-            <p class="card__answer card__answer--visible" data-js="answer">
-              Lorem ipsum dolor
-            </p>
-            <ul class="card__categories page__list">
-              <li class="card__tag">#html</li>
-              <li class="card__tag">#css</li>
-              <li class="card__tag">#flexbox</li>
-            </ul>
-          </li>
-        </ul>
+      <section class="form-page">
+        <form class="form" data-js="form">
+          <label class="form__label" for="question">Your question:</label>
+          <textarea
+            class="form__textarea"
+            name="question"
+            id="question"
+            rows="6"
+            required
+          ></textarea>
+
+          <label class="form__label" for="answer">Your answer:</label>
+          <textarea
+            class="form__textarea"
+            name="answer"
+            id="answer"
+            rows="6"
+            required
+          ></textarea>
+
+          <label class="form__label" for="tags">Tags:</label>
+          <input
+            class="form__input"
+            type="text"
+            name="tags"
+            placeholder="#..., #..., #..."
+          />
+          <button class="submit-btn" type="submit" data-js="submit">
+            Submit
+          </button>
+        </form>
+        <ul class="card-box__list page__list" data-js="cardbox"></ul>
       </section>
     </main>
-
     <footer class="footer">
       <nav class="navbar">
         <a class="navbar__btn" href="../index.html" data-js="home-btn">
@@ -101,12 +66,12 @@
           </svg>
         </a>
         <a
-          class="navbar__btn navbar__btn--marked navbar__btn--active"
+          class="navbar__btn navbar__btn--marked"
           href="./bookmarks.html"
           data-js="marked-btn"
         >
           <svg
-            class="bi bi-bookmark-star-fill navbar__icon navbar__icon--active"
+            class="bi bi-bookmark-star-fill navbar__icon"
             xmlns="http://www.w3.org/2000/svg"
             width="32"
             height="32"
@@ -120,12 +85,12 @@
           </svg>
         </a>
         <a
-          class="navbar__btn navbar__btn--profile"
+          class="navbar__btn navbar__btn--profile navbar__btn--active"
           href="./form.html"
           data-js="profile-btn"
         >
           <svg
-            class="bi bi-plus-circle-fill navbar__icon"
+            class="bi bi-plus-circle-fill navbar__icon navbar__icon--active"
             xmlns="http://www.w3.org/2000/svg"
             width="30"
             height="30"
@@ -157,5 +122,21 @@
         </a>
       </nav>
     </footer>
+
+    <template data-js="template">
+      <li class="card" data-js="card">
+        <button
+          class="card__bookmark"
+          type="button"
+          data-js="bookmark-btn"
+        ></button>
+        <p class="card__question" data-js="question"></p>
+        <button class="card__btn" type="button" data-js="answer-btn">
+          Show answer
+        </button>
+        <p class="card__answer" data-js="answer"></p>
+        <ul class="card__categories page__list" data-js="tags"></ul>
+      </li>
+    </template>
   </body>
 </html>
