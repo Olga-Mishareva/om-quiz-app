@@ -1,48 +1,31 @@
-const bookmarkButtons = document.querySelectorAll('[data-js="bookmark-btn"]');
-const answerButtons = document.querySelectorAll('[data-js="answer-btn"]');
-
-Array.from(bookmarkButtons).forEach((button) => {
-  button.addEventListener("click", () => {
-    button.classList.toggle("card__bookmark--active");
-  });
-});
-
-Array.from(answerButtons).forEach((button) => {
-  button.addEventListener("click", () => {
-    const card = button.closest("li");
-    const answer = card.querySelector('[data-js="answer"]');
-    answer.classList.toggle("card__answer--visible");
-    if (answer.classList.contains("card__answer--visible")) {
-      button.textContent = "Hide answer";
-    } else {
-      button.textContent = "Show answer";
-    }
-  });
-});
-
 const from = document.querySelector('[data-js="form"]');
 const cardBox = document.querySelector('[data-js="cardbox"]');
-let cardCounter = 0;
 
 function getTemplate() {
   const template = document.querySelector('[data-js="template"]');
   const cardElement = template.content.cloneNode(true);
-
   return cardElement;
 }
 
-function createCard() {
+function createCard(question, answer, tags) {
   const newCard = getTemplate();
-  handleAnswerButton(newCard);
+  const cardQuestion = newCard.querySelector('[data-js="question"]');
+  const answerButton = newCard.querySelector('[data-js="answer-btn"]');
+  const cardAnswer = newCard.querySelector('[data-js="answer"]');
+
+  handleAnswerButton(answerButton, cardAnswer);
+  handleBookmarkButton(newCard);
+  handleTags(newCard, tags);
+
+  cardQuestion.textContent = question;
+  cardAnswer.textContent = answer;
   cardBox.append(newCard);
 }
 
-function handleAnswerButton(card) {
-  const answerButton = card.querySelector('[data-js="answer-btn"]');
-  const answer = card.querySelector('[data-js="answer"]');
+function handleAnswerButton(answerButton, cardAnswer) {
   answerButton.addEventListener("click", () => {
-    answer.classList.toggle("card__answer--visible");
-    if (answer.classList.contains("card__answer--visible")) {
+    cardAnswer.classList.toggle("card__answer--visible");
+    if (cardAnswer.classList.contains("card__answer--visible")) {
       answerButton.textContent = "Hide answer";
     } else {
       answerButton.textContent = "Show answer";
@@ -50,23 +33,25 @@ function handleAnswerButton(card) {
   });
 }
 
-function handleQuestion(question) {
-  const questionList = Array.from(
-    document.querySelectorAll('[data-js="question"]')
-  );
-  const cardQuestion = questionList.find((item, i) => i == cardCounter);
-  cardQuestion.textContent = question;
+function handleBookmarkButton(newCard) {
+  const bookmarkButton = newCard.querySelector('[data-js="bookmark-btn"]');
+  bookmarkButton.addEventListener("click", () => {
+    bookmarkButton.classList.toggle("card__bookmark--active");
+  });
 }
 
-function handleAnswer(answer) {
-  const answerList = Array.from(
-    document.querySelectorAll('[data-js="answer"]')
-  );
-  const cardAnswer = answerList.find((item, i) => i == cardCounter);
-  cardAnswer.textContent = answer;
-}
+function handleTags(newCard, tags) {
+  const tagsBox = newCard.querySelector('[data-js="tags"]');
+  const tagsList = tags.split(",");
+  console.log(tagsList);
 
-// function handleTags(tags) {}
+  tagsList.forEach((item) => {
+    const tag = document.createElement("li");
+    tag.classList.add("card__tag");
+    tag.textContent = item;
+    tagsBox.append(tag);
+  });
+}
 
 from.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -74,12 +59,7 @@ from.addEventListener("submit", (event) => {
     new FormData(event.target)
   );
 
-  createCard();
-  handleQuestion(question);
-  handleAnswer(answer);
-  // handleTags(tags)
-
-  cardCounter++;
+  createCard(question, answer, tags);
   from.reset();
   event.target.elements.question.focus();
 });
