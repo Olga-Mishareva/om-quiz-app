@@ -23,6 +23,7 @@
             name="question"
             id="question"
             rows="6"
+            required
           ></textarea>
 
           <label class="form__label" for="answer">Your answer:</label>
@@ -31,10 +32,16 @@
             name="answer"
             id="answer"
             rows="6"
+            required
           ></textarea>
 
           <label class="form__label" for="tags">Tags:</label>
-          <input class="form__input" type="text" name="tags" />
+          <input
+            class="form__input"
+            type="text"
+            name="tags"
+            placeholder="#..., #..., #..."
+          />
           <button class="submit-btn" type="submit" data-js="submit">
             Submit
           </button>
@@ -118,17 +125,17 @@
 
     <template data-js="template">
       <li class="card" data-js="card">
-        <button class="card__bookmark"></button>
+        <button
+          class="card__bookmark"
+          type="button"
+          data-js="bookmark-btn"
+        ></button>
         <p class="card__question" data-js="question"></p>
         <button class="card__btn" type="button" data-js="answer-btn">
           Show answer
         </button>
         <p class="card__answer" data-js="answer"></p>
-        <ul class="card__categories page__list">
-          <template data-js="tag">
-            <li class="card__tag"></li>
-          </template>
-        </ul>
+        <ul class="card__categories page__list" data-js="tags"></ul>
       </li>
     </template>
   </body>
