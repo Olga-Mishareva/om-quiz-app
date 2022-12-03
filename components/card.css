@@ -94,7 +94,7 @@
 .card__tag {
   border: #a4a4a4 solid 1px;
   padding: 5px;
-  background-color: var(--gray-bg-color);
+  background-color: var(--tag-color);
   color: var(--card-font-color);
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.2) 1px 2px 5px;
