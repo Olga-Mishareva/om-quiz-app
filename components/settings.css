@@ -59,8 +59,9 @@
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background-color: var(--card-bg-color);
-  box-shadow: rgba(19, 14, 68, 0.5) 0 0 3px;
+  background-color: var(--count-color);
+  box-shadow: rgba(0, 0, 0, 0.8) 0 0 4px;
+  transition: 0.2s ease-in;
 }
 
 .settings__checkbox:checked + .settings__lable .settings__toggle-circle {

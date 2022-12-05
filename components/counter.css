@@ -15,8 +15,8 @@
   height: 30px;
   padding: 0 8px;
   border: 1px solid var(--hd-color);
-  border-radius: 7px;
-  background-color: var(--card-bg-color);
+  border-radius: 5px;
+  background-color: var(--count-color);
   box-shadow: rgba(19, 14, 68, 0.5) 1px 1px 5px;
   transition: box-shadow 0.2s linear;
 }

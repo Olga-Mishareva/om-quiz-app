@@ -16,6 +16,11 @@
   padding: 5px;
   border: 2px solid var(--card-font-color);
   border-radius: 10px;
+  background-color: var(--count-color);
+  background-color: var(--text-area-color);
+  /* background-color: #fcbd96;
+  background-color: #9fcce4;
+  background-color: #edb5bf; */
 }
 
 .form__input {
