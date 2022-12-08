@@ -13,9 +13,9 @@
   justify-content: space-between;
   width: 60px;
   height: 30px;
-  padding: 0 8px;
+  padding: 0 10px 0 8px;
   border: 1px solid var(--hd-color);
-  border-radius: 5px;
+  border-radius: 20px;
   background-color: var(--count-color);
   box-shadow: rgba(19, 14, 68, 0.5) 1px 1px 5px;
   transition: box-shadow 0.2s linear;

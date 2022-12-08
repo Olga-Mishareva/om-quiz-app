@@ -8,6 +8,7 @@ const cardColors = [
 
 const from = document.querySelector('[data-js="form"]');
 const cardBox = document.querySelector('[data-js="cardbox"]');
+console.log(cardBox);
 
 function getTemplate() {
   const template = document.querySelector('[data-js="template"]');

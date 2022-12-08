@@ -1,5 +1,6 @@
 .settings {
-  padding: 0 30px;
+  /* 517 - all content for this media-screen, 128 - header + footer */
+  padding-top: calc(100vh - 517px - 128px);
 }
 
 .settings__title {
